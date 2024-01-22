@@ -3,7 +3,13 @@ import './Step3.css'
 
 function Step3() {
   return (
-    <div>Step3</div>
+    <div className='page3'>
+      <div className="titre">
+        <h2> Pick add-ons </h2>
+        <span> Add-ons help enhance your gaming experience. </span>
+      </div>
+
+    </div>
   )
 }
 
