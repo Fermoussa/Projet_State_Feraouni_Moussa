@@ -1,11 +1,11 @@
 import React from 'react';
 import './Sidebar.css';
 
-function Sidebar() {
+function Sidebar(props) {
   return (
     <div className='side'>
         <div className="lien">
-            <div><button> 1 </button></div>
+            <div><button onClick={()=> props.setLink(1)}> 1 </button></div>
             <div className='txtlien'>
                 <span> Step 1</span>
                 <span> YOUR INFO </span>
@@ -13,7 +13,7 @@ function Sidebar() {
         </div>
 
         <div className="lien">
-            <div><button> 2 </button></div>
+            <div><button onClick={()=> props.setLink(2)}> 2 </button></div>
             <div className='txtlien'>
                 <span> Step 2</span>
                 <span> SELECT PLAN </span>
@@ -21,7 +21,7 @@ function Sidebar() {
         </div>
 
         <div className="lien">
-            <div><button> 3 </button></div>
+            <div><button onClick={()=> props.setLink(3)}> 3 </button></div>
             <div className='txtlien'>
                 <span> Step 3</span>
                 <span> ADD-ONS </span>
@@ -29,7 +29,7 @@ function Sidebar() {
         </div>
 
         <div className="lien">
-            <div><button> 4 </button></div>
+            <div><button onClick={()=> props.setLink(4)}> 4 </button></div>
             <div className='txtlien'>
                 <span> Step 4</span>
                 <span> SUMMARY </span>

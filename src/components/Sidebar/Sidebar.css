@@ -5,10 +5,10 @@
     background-repeat: no-repeat;
     background-size: cover;
     width: 20vw;
-    height: 70vh;
+    height: 60vh;
     align-items: center;
-    row-gap: 10%;
-    padding-top: 10%;
+    row-gap: 6%;
+    padding-top: 6%;
     border-radius: 10px;
 
 }

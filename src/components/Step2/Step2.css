@@ -1,0 +1,21 @@
+.page2{
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+}
+
+.titre{
+    display: flex;
+    flex-direction: column;
+    /* background-color: red; */
+    margin-bottom: 13%;
+
+    span{
+        color: rgb(177, 174, 174);
+    }
+}
+
+.choixplan{
+    display: flex;
+    flex-direction: row;
+}
