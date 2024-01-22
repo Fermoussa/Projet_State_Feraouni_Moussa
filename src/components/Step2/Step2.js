@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Step2.css'
+import arcade from '../../assets/arcade.svg'
+
 
 function Step2() {
+
+  const[prixarcade, setPrixarcade] = useState(9);
+  const[periode, setPeriode] = useState("mo");
+
   return (
     <div className='page2'>
 
@@ -12,8 +18,32 @@ function Step2() {
 
       <div className="choixplan">
 
+        <div className="plan">
+          <div> <img src={arcade} alt="" /> </div>
+          <div className='detailplan'>
+            <span> Arcade </span>
+            <span> ${prixarcade}/{periode} </span>
+          </div>
+        </div>
+
+        <div className="plan">
+          <div> <img src={arcade} alt="" /> </div>
+          <div className='detailplan'>
+            <span> Arcade </span>
+            <span> ${prixarcade}/{periode} </span>
+          </div>
+        </div>
+
+        <div className="plan">
+          <div> <img src={arcade} alt="" /> </div>
+          <div className='detailplan'>
+            <span> Arcade </span>
+            <span> ${prixarcade}/{periode} </span>
+          </div>
+        </div>
+
       </div>
-      
+
     </div>
   )
 }

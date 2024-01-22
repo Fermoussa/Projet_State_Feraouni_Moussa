@@ -10,7 +10,7 @@ function App() {
 
   const[link, setLink] = useState(1);
   const[nom, setNom] = useState("");
-  const[mail, setMil] = useState("");
+  const[mail, setMail] = useState("");
   const[phone, setPhone] = useState("");
   const[total, setTotal] = useState(0);
 
