@@ -4,7 +4,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(241, 248, 250);
+  background-color: rgb(226, 239, 242);
 }
 
 
+.content{
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  border-radius: 10px;
+  padding: 2%;
+}
