@@ -19,9 +19,11 @@ function Step2(props) {
 
   if(verif === false){
     props.setPeriodefinale("month");
+    props.setTimeabo("mo");
   }
   else if(verif === true){
     props.setPeriodefinale("year");
+    props.setTimeabo("yr");
   }
 
 
@@ -34,6 +36,7 @@ function Step2(props) {
       setPrixadvanced(prixadvanced*10);
       setPrixpro(prixpro*10);
       setPeriode("year");
+      // props.setTimeabo("yr");
       // props.setPeriodefinale("year");
       setVerif(true)
     }
@@ -44,6 +47,8 @@ function Step2(props) {
       setPrixadvanced(prixadvanced/10);
       setPrixpro(prixpro/10);
       setPeriode("mo");
+
+      props.setTimeabo("mo");
       // props.setPeriodefinale("month");
       setVerif(false)
     }

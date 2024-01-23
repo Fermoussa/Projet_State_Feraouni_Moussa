@@ -24,7 +24,8 @@
 
     button{
         border-radius: 50%;
-        padding: 12px;
+        height: 2rem;
+        width: 2rem;
         border: 1px solid white;
         color: white;
         background-color: transparent;

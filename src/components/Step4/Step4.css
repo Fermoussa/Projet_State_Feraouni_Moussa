@@ -10,11 +10,30 @@
 .recap{
     display: flex;
     flex-direction: column;
-    background-color: lightblue;
+    background-color: rgb(238, 246, 249);
     padding: 4%;
 
     .plan{
         display: flex;
         flex-direction: column;
+
+        .detailplan{
+            /* background-color: red; */
+            display: flex;
+            justify-content: space-between;
+
+            span{
+                color: darkblue;
+                font-weight: 600;
+            }
+        }
+
+        .retour{
+            color: red;
+            color: rgb(172, 171, 171);
+            font-size: 14px;
+            text-decoration: underline;
+            cursor: pointer;
+        }
     }
 }

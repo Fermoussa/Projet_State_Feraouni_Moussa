@@ -16,20 +16,22 @@ function App() {
   const[add, setAdd] = useState(0);
 
   const[planfinale, setPlanfinale] = useState("");
-  const[periodefinale, setPeriodefinale] = useState("moussa");
+  const[periodefinale, setPeriodefinale] = useState("");
   const[prixfinale, setPrixfinale] = useState(0);
+  const[timeabo, setTimeabo] = useState("mouss");
+
 
 
   // let page = link == 1 ? <Step1/> : <Step2/>
   let page;
   if(link == 1){
-    page = <Step1 link={link} setLink={setLink} />;
+    page = <Step1 link={link} setLink={setLink} nom={nom} setNom={setNom} mail={mail} setMail={setMail} phone={phone} setPhone={setPhone}  />;
   }else if(link == 2){
-    page = <Step2 link={link} setLink={setLink} total={total} setTotal={setTotal} planfinale={planfinale} setPlanfinale={setPlanfinale} periodefinale={periodefinale} setPeriodefinale={setPeriodefinale} prixfinale={prixfinale} setPrixfinale={setPrixfinale}  />;
+    page = <Step2 link={link} setLink={setLink} total={total} setTotal={setTotal} planfinale={planfinale} setPlanfinale={setPlanfinale} periodefinale={periodefinale} setPeriodefinale={setPeriodefinale} prixfinale={prixfinale} setPrixfinale={setPrixfinale} timeabo={timeabo} setTimeabo={setTimeabo}  />;
   }else if(link == 3){
     page = <Step3 link={link} setLink={setLink} total={total} setTotal={setTotal} add={add} setAdd={setAdd} />;
   }else{
-    page = <Step4 link={link} setLink={setLink} total={total} setTotal={setTotal} planfinale={planfinale} periodefinale={periodefinale} setPeriodefinale={setPeriodefinale} prixfinale={prixfinale} setPrixfinale={setPrixfinale} />
+    page = <Step4 link={link} setLink={setLink} total={total} setTotal={setTotal} planfinale={planfinale} periodefinale={periodefinale} setPeriodefinale={setPeriodefinale} prixfinale={prixfinale} setPrixfinale={setPrixfinale} timeabo={timeabo} setTimeabo={setTimeabo} />
   }
 
   return (

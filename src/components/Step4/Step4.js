@@ -12,11 +12,20 @@ function Step4(props) {
       </div>
 
       <div className="recap">
+
         <div className="plan">
           <div className="detailplan">
-            <span> {props.planfinale}({props.periodefinale}) {props.prixfinale}</span>
+            <span> {props.planfinale}({props.periodefinale}) </span> 
+            <span>${props.prixfinale}/{props.timeabo} </span>
           </div>
+
+          <div className="retour">
+            <span onClick={()=> props.setLink(2)}> Change </span>
+          </div>
+
+
         </div>
+
       </div>
 
     </div>
