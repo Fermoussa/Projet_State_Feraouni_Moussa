@@ -13,22 +13,23 @@ function Step3(props) {
   const [isChecked, setIsChecked] = useState(false);
 
   function choixadd(e){
-    setIsChecked(true);
     // console.log(e.currentTarget);
 
-    let checkbox = document.getElementsByClassName("check")
+    let checkbox = document.getElementsByClassName("check");
     checkbox.checked = !checkbox.checked;
+    
 
     let a = e.currentTarget.className
 
-    if(isChecked == true){
-      setIsChecked(false);
-    }
+    // if(isChecked == true){
+    //   setIsChecked(false);
+    // }
 
     if(a.includes("add online")){
       // props.setTotal(props.total + online);
       props.setAdd(online);
       setTest(1);
+      // checkbox.checked = !checkbox.checked;
     }
 
     else if(a.includes("add larger")){
@@ -48,7 +49,7 @@ function Step3(props) {
   useEffect(()=>{
     // console.log(`le prix : ${online}`);
     // console.log(`Le total finale: ${props.total}`);
-    console.log(props.add);
+    console.log(`choix add ${props.add}`);
   },[props.add])
 
   return (
@@ -61,7 +62,7 @@ function Step3(props) {
 
       <div className="contentadd">
 
-        <div className={`add online ${isChecked == true ? "actives" : null}`} onClick={choixadd}>
+        <div className={`add online ${test === 1 ? "actives" : null}`} onClick={choixadd}>
           <input type="checkbox" className='check' />
           <div className="detailadd">
             <span className='titreadd'> Online Service </span>
@@ -70,7 +71,7 @@ function Step3(props) {
           <span className='prixadd'> +${online}/mo </span>
         </div>
 
-        <div className={`add online ${isChecked == true ? "actives" : null}`} onClick={choixadd}>
+        <div className={`add larger ${test === 2 ? "actives" : null}`} onClick={choixadd}>
           <input type="checkbox" className='check' />
           <div className="detailadd">
             <span className='titreadd'> Larger storage </span>
@@ -79,7 +80,7 @@ function Step3(props) {
           <span className='prixadd'> +${larger}/mo </span>
         </div>
 
-        <div className={`add custom ${test == 3 ? "actives" : null}`} onClick={choixadd}>
+        <div className={`add custom ${test === 3 ? "actives" : null}`} onClick={choixadd}>
           <input type="checkbox" className='check' />
           <div className="detailadd">
             <span className='titreadd'> Customizable Profile </span>

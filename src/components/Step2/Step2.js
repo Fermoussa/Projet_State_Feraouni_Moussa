@@ -45,19 +45,25 @@ function Step2(props) {
     if(choice.includes("plan arcade")){
       console.log(`le prix arcade : ${prixarcade}`);
       props.setTotal(prixarcade);
-      console.log(`Le total ${props.total}`);
+
+      props.setPlanfinale("Arcade");
+      // console.log(`Le total ${props.total}`);
       // e.currentTarget.classList.add("active");
     }
     else if(choice.includes("plan adv")){
       console.log(`le prix adv : ${prixadvanced}`);
       props.setTotal(prixadvanced);
-      console.log(`Le total ${props.total}`);
+
+      props.setPlanfinale("Advanced");
+      // console.log(`Le total ${props.total}`);
       // e.currentTarget.classList.add("active");
     }
     else if(choice.includes("plan pro")){
       console.log(`le prix pro : ${prixpro}`);
       props.setTotal(prixpro);
-      console.log(`Le total ${props.total}`);
+
+      props.setPlanfinale("Pro");
+      // console.log(`Le total ${props.total}`);
       // e.currentTarget.classList.add("active");
     }
 
