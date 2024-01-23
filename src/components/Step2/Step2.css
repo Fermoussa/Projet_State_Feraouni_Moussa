@@ -3,7 +3,7 @@
     flex-direction: column;
     margin-left: 5%;
     /* background-color: cadetblue; */
-    padding-left: 4%;
+    padding-left: 7%;
     width: 30vw;
 
 }
@@ -24,7 +24,7 @@
     flex-direction: row;
     /* background-color: green; */
     gap: 3%;
-    justify-content: center;
+    /* justify-content: center; */
 
     .plan{
         display: flex;
@@ -54,8 +54,8 @@
 .switch{
     background-color: rgb(219, 221, 254);
     width: 92%;
-    margin-top: 4%;
-    margin-left: 4%;
+    margin-top: 7%;
+    margin-left: 1%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -97,7 +97,7 @@
 .pass{
     width: 95%;
     margin-top: 20%;
-    margin-left: 4%;
+    /* margin-left: 4%; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;

@@ -13,6 +13,7 @@ function App() {
   const[mail, setMail] = useState("");
   const[phone, setPhone] = useState("");
   const[total, setTotal] = useState(0);
+  const[add, setAdd] = useState(0);
 
 
   // let page = link == 1 ? <Step1/> : <Step2/>
@@ -22,7 +23,7 @@ function App() {
   }else if(link == 2){
     page = <Step2 link={link} setLink={setLink} total={total} setTotal={setTotal} />;
   }else if(link == 3){
-    page = <Step3 link={link} setLink={setLink}/>;
+    page = <Step3 link={link} setLink={setLink} total={total} setTotal={setTotal} add={add} setAdd={setAdd} />;
   }else{
     page = <Step4 link={link} setLink={setLink}/>
   }
