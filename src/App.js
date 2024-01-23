@@ -16,6 +16,8 @@ function App() {
   const[add, setAdd] = useState(0);
 
   const[planfinale, setPlanfinale] = useState("");
+  const[periodefinale, setPeriodefinale] = useState("moussa");
+  const[prixfinale, setPrixfinale] = useState(0);
 
 
   // let page = link == 1 ? <Step1/> : <Step2/>
@@ -23,11 +25,11 @@ function App() {
   if(link == 1){
     page = <Step1 link={link} setLink={setLink} />;
   }else if(link == 2){
-    page = <Step2 link={link} setLink={setLink} total={total} setTotal={setTotal} planfinale={planfinale} setPlanfinale={setPlanfinale} />;
+    page = <Step2 link={link} setLink={setLink} total={total} setTotal={setTotal} planfinale={planfinale} setPlanfinale={setPlanfinale} periodefinale={periodefinale} setPeriodefinale={setPeriodefinale} prixfinale={prixfinale} setPrixfinale={setPrixfinale}  />;
   }else if(link == 3){
     page = <Step3 link={link} setLink={setLink} total={total} setTotal={setTotal} add={add} setAdd={setAdd} />;
   }else{
-    page = <Step4 link={link} setLink={setLink} total={total} setTotal={setTotal} planfinale={planfinale}/>
+    page = <Step4 link={link} setLink={setLink} total={total} setTotal={setTotal} planfinale={planfinale} periodefinale={periodefinale} setPeriodefinale={setPeriodefinale} prixfinale={prixfinale} setPrixfinale={setPrixfinale} />
   }
 
   return (

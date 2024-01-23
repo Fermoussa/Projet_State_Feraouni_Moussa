@@ -6,3 +6,15 @@
     padding-left: 7%;
     width: 30vw;
 }
+
+.recap{
+    display: flex;
+    flex-direction: column;
+    background-color: lightblue;
+    padding: 4%;
+
+    .plan{
+        display: flex;
+        flex-direction: column;
+    }
+}

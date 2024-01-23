@@ -13,9 +13,20 @@ function Step2(props) {
   const[prixpro, setPrixpro] = useState(15);
   const[periode, setPeriode] = useState("mo");
 
-  const[verif,setVerif] = useState(false)
+  const[verif,setVerif] = useState(false);
+
+  // props.setPeriodefinale("month");
+
+  if(verif === false){
+    props.setPeriodefinale("month");
+  }
+  else if(verif === true){
+    props.setPeriodefinale("year");
+  }
+
 
   function annee(e){
+
     if(verif === false){
       e.target.style.justifyContent = "end";
       
@@ -23,6 +34,7 @@ function Step2(props) {
       setPrixadvanced(prixadvanced*10);
       setPrixpro(prixpro*10);
       setPeriode("year");
+      // props.setPeriodefinale("year");
       setVerif(true)
     }
 
@@ -32,6 +44,7 @@ function Step2(props) {
       setPrixadvanced(prixadvanced/10);
       setPrixpro(prixpro/10);
       setPeriode("mo");
+      // props.setPeriodefinale("month");
       setVerif(false)
     }
 
@@ -45,8 +58,9 @@ function Step2(props) {
     if(choice.includes("plan arcade")){
       console.log(`le prix arcade : ${prixarcade}`);
       props.setTotal(prixarcade);
-
+      
       props.setPlanfinale("Arcade");
+      props.setPrixfinale(prixarcade);
       // console.log(`Le total ${props.total}`);
       // e.currentTarget.classList.add("active");
     }
@@ -54,6 +68,7 @@ function Step2(props) {
       console.log(`le prix adv : ${prixadvanced}`);
       props.setTotal(prixadvanced);
 
+      props.setPrixfinale(prixadvanced);
       props.setPlanfinale("Advanced");
       // console.log(`Le total ${props.total}`);
       // e.currentTarget.classList.add("active");
@@ -62,6 +77,7 @@ function Step2(props) {
       console.log(`le prix pro : ${prixpro}`);
       props.setTotal(prixpro);
 
+      props.setPrixfinale(prixpro);
       props.setPlanfinale("Pro");
       // console.log(`Le total ${props.total}`);
       // e.currentTarget.classList.add("active");
