@@ -2,6 +2,7 @@ import React from 'react';
 import './Sidebar.css';
 
 function Sidebar(props) {
+    
   return (
     <div className='side'>
         <div className="lien">

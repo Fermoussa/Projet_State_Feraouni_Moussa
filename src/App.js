@@ -20,6 +20,8 @@ function App() {
   const[prixfinale, setPrixfinale] = useState(0);
   const[timeabo, setTimeabo] = useState("mouss");
 
+  const[tab, setTab] = useState([]);
+
 
 
   // let page = link == 1 ? <Step1/> : <Step2/>
@@ -29,7 +31,7 @@ function App() {
   }else if(link == 2){
     page = <Step2 link={link} setLink={setLink} total={total} setTotal={setTotal} planfinale={planfinale} setPlanfinale={setPlanfinale} periodefinale={periodefinale} setPeriodefinale={setPeriodefinale} prixfinale={prixfinale} setPrixfinale={setPrixfinale} timeabo={timeabo} setTimeabo={setTimeabo}  />;
   }else if(link == 3){
-    page = <Step3 link={link} setLink={setLink} total={total} setTotal={setTotal} add={add} setAdd={setAdd} />;
+    page = <Step3 link={link} setLink={setLink} total={total} setTotal={setTotal} add={add} setAdd={setAdd} tab={tab} setTab={setTab} />;
   }else{
     page = <Step4 link={link} setLink={setLink} total={total} setTotal={setTotal} planfinale={planfinale} periodefinale={periodefinale} setPeriodefinale={setPeriodefinale} prixfinale={prixfinale} setPrixfinale={setPrixfinale} timeabo={timeabo} setTimeabo={setTimeabo} />
   }

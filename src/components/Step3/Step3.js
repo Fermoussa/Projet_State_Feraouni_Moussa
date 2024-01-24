@@ -29,6 +29,8 @@ function Step3(props) {
       // props.setTotal(props.total + online);
       props.setAdd(online);
       setTest(1);
+
+      props.setTab([...props.tab, {pub:"add online", }]);
       // checkbox.checked = !checkbox.checked;
     }
 
@@ -36,12 +38,16 @@ function Step3(props) {
       // props.setTotal(props.total + larger);
       props.setAdd(larger);
       setTest(2);
+
+      props.setTab([...props.tab, {pub:"add larger"}]);
     }
 
     else if(a.includes("add custom")){
       // props.setTotal(props.total + custom);
       props.setAdd(custom);
       setTest(3);
+
+      props.setTab([...props.tab, {pub:"add custom"}]);
     }
 
   }
@@ -49,8 +55,9 @@ function Step3(props) {
   useEffect(()=>{
     // console.log(`le prix : ${online}`);
     // console.log(`Le total finale: ${props.total}`);
-    console.log(`choix add ${props.add}`);
-  },[props.add])
+    console.log(props.tab);
+    // console.log(`choix add ${props.add}`);
+  },[props.add],[props.tab])
 
   return (
     <div className='page3'>
