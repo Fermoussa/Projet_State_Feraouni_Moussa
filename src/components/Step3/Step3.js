@@ -27,27 +27,55 @@ function Step3(props) {
 
     if(a.includes("add online")){
       // props.setTotal(props.total + online);
+      e.currentTarget.classList.add("choisi");
       props.setAdd(online);
       setTest(1);
 
-      props.setTab([...props.tab, {pub:"add online", }]);
+      props.setTab([...props.tab, {pub:"Online service", prix: online }]);
+      props.setTotaladd(props.totaladd + online);
+
+      if (props.tab.some(item => item.pub === "Online service" && item.prix === online)) {
+        alert("pub déjà choisi");
+        props.setTab([...props.tab, ]);
+        props.setTotaladd(props.totaladd);
+        e.currentTarget.classList.remove("choisi");
+      }
       // checkbox.checked = !checkbox.checked;
     }
 
     else if(a.includes("add larger")){
       // props.setTotal(props.total + larger);
+      e.currentTarget.classList.add("choisi");
       props.setAdd(larger);
       setTest(2);
 
-      props.setTab([...props.tab, {pub:"add larger"}]);
+      props.setTab([...props.tab, {pub:"Larger storage", prix: larger }]);
+      props.setTotaladd(props.totaladd + larger);
+
+      if (props.tab.some(item => item.pub === "Larger storage" && item.prix === larger)) {
+        alert("pub déjà choisi");
+        props.setTab([...props.tab, ]);
+        props.setTotaladd(props.totaladd);
+      }
+
+      
     }
 
     else if(a.includes("add custom")){
       // props.setTotal(props.total + custom);
+      e.currentTarget.classList.add("choisi");
       props.setAdd(custom);
       setTest(3);
 
-      props.setTab([...props.tab, {pub:"add custom"}]);
+      props.setTab([...props.tab, {pub:"Customizable Profile", prix: custom }]);
+      props.setTotaladd(props.totaladd + custom);
+      
+
+      if (props.tab.some(item => item.pub === "Customizable Profile" && item.prix === custom)) {
+        alert("pub déjà choisi");
+        props.setTab([...props.tab, ]);
+        props.setTotaladd(props.totaladd);
+      }
     }
 
   }
@@ -66,11 +94,14 @@ function Step3(props) {
         <h2> Pick add-ons </h2>
         <span> Add-ons help enhance your gaming experience. </span>
       </div>
+      {/* {`add online ${test === 1 ? "actives" : null}`} 
+      {`add larger ${test === 2 ? "actives" : null}`}
+      {`add custom ${test === 3 ? "actives" : null}`} */}
 
       <div className="contentadd">
 
-        <div className={`add online ${test === 1 ? "actives" : null}`} onClick={choixadd}>
-          <input type="checkbox" className='check' />
+        <div className= "add online"  onClick={choixadd}>
+          {/* <input type="checkbox" className='check' checked={props.tab.includes(item) ? true : false} /> */}
           <div className="detailadd">
             <span className='titreadd'> Online Service </span>
             <span className='txt'> Access to multiplayer games </span>
@@ -78,8 +109,8 @@ function Step3(props) {
           <span className='prixadd'> +${online}/mo </span>
         </div>
 
-        <div className={`add larger ${test === 2 ? "actives" : null}`} onClick={choixadd}>
-          <input type="checkbox" className='check' />
+        <div className= "add larger" onClick={choixadd}>
+          {/* <input type="checkbox" className='check' /> */}
           <div className="detailadd">
             <span className='titreadd'> Larger storage </span>
             <span className='txt'> Extra 1TB of cloud save </span>
@@ -87,8 +118,8 @@ function Step3(props) {
           <span className='prixadd'> +${larger}/mo </span>
         </div>
 
-        <div className={`add custom ${test === 3 ? "actives" : null}`} onClick={choixadd}>
-          <input type="checkbox" className='check' />
+        <div className="add custom" onClick={choixadd}>
+          {/* <input type="checkbox" className='check' /> */}
           <div className="detailadd">
             <span className='titreadd'> Customizable Profile </span>
             <span className='txt'> Custom theme on your profile </span>

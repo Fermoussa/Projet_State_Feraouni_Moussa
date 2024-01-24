@@ -17,11 +17,25 @@ function Step4(props) {
           <div className="detailplan">
             <span> {props.planfinale}({props.periodefinale}) </span> 
             <span>${props.prixfinale}/{props.timeabo} </span>
+            <span> {props.totaladd} </span>
           </div>
 
           <div className="retour">
             <span onClick={()=> props.setLink(2)}> Change </span>
           </div>
+
+          <div className="choixpub">
+            {
+              props.tab.map((item,index)=>(
+                <div className='pub'>
+                  <span className='add'> {item.pub} </span>
+                  <span> +${item.prix}/mo </span>
+                </div>
+              ))
+            }
+          </div>
+
+
 
 
         </div>

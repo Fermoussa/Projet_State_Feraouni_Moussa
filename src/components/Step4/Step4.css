@@ -34,6 +34,28 @@
             font-size: 14px;
             text-decoration: underline;
             cursor: pointer;
+            margin-bottom: 10%;
+            /* background-color: yellow; */
+            margin-top: 2%;
+            border-bottom: 1px solid lightgray;
+            height: 6vh;
+        }
+
+        .choixpub{
+            display: flex;
+            flex-direction: column;
+            row-gap: 15px;
+
+
+            .pub{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                .add{
+                    color: lightgray;
+                }
+            }
         }
     }
 }

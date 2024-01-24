@@ -21,6 +21,7 @@ function App() {
   const[timeabo, setTimeabo] = useState("mouss");
 
   const[tab, setTab] = useState([]);
+  const[totaladd, setTotaladd] = useState(0);
 
 
 
@@ -31,9 +32,9 @@ function App() {
   }else if(link == 2){
     page = <Step2 link={link} setLink={setLink} total={total} setTotal={setTotal} planfinale={planfinale} setPlanfinale={setPlanfinale} periodefinale={periodefinale} setPeriodefinale={setPeriodefinale} prixfinale={prixfinale} setPrixfinale={setPrixfinale} timeabo={timeabo} setTimeabo={setTimeabo}  />;
   }else if(link == 3){
-    page = <Step3 link={link} setLink={setLink} total={total} setTotal={setTotal} add={add} setAdd={setAdd} tab={tab} setTab={setTab} />;
+    page = <Step3 link={link} setLink={setLink} total={total} setTotal={setTotal} add={add} setAdd={setAdd} tab={tab} setTab={setTab} totaladd={totaladd} setTotaladd={setTotaladd} />;
   }else{
-    page = <Step4 link={link} setLink={setLink} total={total} setTotal={setTotal} planfinale={planfinale} periodefinale={periodefinale} setPeriodefinale={setPeriodefinale} prixfinale={prixfinale} setPrixfinale={setPrixfinale} timeabo={timeabo} setTimeabo={setTimeabo} />
+    page = <Step4 link={link} setLink={setLink} total={total} setTotal={setTotal} planfinale={planfinale} periodefinale={periodefinale} setPeriodefinale={setPeriodefinale} prixfinale={prixfinale} setPrixfinale={setPrixfinale} timeabo={timeabo} setTimeabo={setTimeabo} tab={tab} setTab={setTab} totaladd={totaladd} setTotaladd={setTotaladd} />
   }
 
   return (
