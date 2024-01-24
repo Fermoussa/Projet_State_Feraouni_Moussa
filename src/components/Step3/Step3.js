@@ -10,16 +10,17 @@ function Step3(props) {
 
   const[test, setTest] = useState(0);
 
-  const [isChecked, setIsChecked] = useState(false);
 
   function choixadd(e){
     // console.log(e.currentTarget);
 
-    let checkbox = document.getElementsByClassName("check");
-    checkbox.checked = !checkbox.checked;
+    // let checkbox = document.getElementsByClassName("check");
+    // checkbox.checked = !checkbox.checked;
     
 
     let a = e.currentTarget.className
+
+
 
     // if(isChecked == true){
     //   setIsChecked(false);
@@ -31,14 +32,16 @@ function Step3(props) {
       props.setAdd(online);
       setTest(1);
 
+
+
       props.setTab([...props.tab, {pub:"Online service", prix: online }]);
       props.setTotaladd(props.totaladd + online);
 
       if (props.tab.some(item => item.pub === "Online service" && item.prix === online)) {
-        alert("pub déjà choisi");
-        props.setTab([...props.tab, ]);
-        props.setTotaladd(props.totaladd);
+        alert("choix supprimé");
+        props.setTotaladd(props.totaladd - online);
         e.currentTarget.classList.remove("choisi");
+        props.setTab(props.tab.filter(objet => objet.pub !== "Online service")) 
       }
       // checkbox.checked = !checkbox.checked;
     }
@@ -53,9 +56,10 @@ function Step3(props) {
       props.setTotaladd(props.totaladd + larger);
 
       if (props.tab.some(item => item.pub === "Larger storage" && item.prix === larger)) {
-        alert("pub déjà choisi");
-        props.setTab([...props.tab, ]);
-        props.setTotaladd(props.totaladd);
+        alert("choix supprimé");
+        props.setTab(props.tab.filter(objet => objet.pub !== "Larger storage")) 
+        e.currentTarget.classList.remove("choisi");
+        props.setTotaladd(props.totaladd - larger);
       }
 
       
@@ -72,9 +76,10 @@ function Step3(props) {
       
 
       if (props.tab.some(item => item.pub === "Customizable Profile" && item.prix === custom)) {
-        alert("pub déjà choisi");
-        props.setTab([...props.tab, ]);
-        props.setTotaladd(props.totaladd);
+        alert("choix supprimé");
+        props.setTab(props.tab.filter(objet => objet.pub !== "Customizable Profile")) 
+        props.setTotaladd(props.totaladd - custom);
+        e.currentTarget.classList.remove("choisi");
       }
     }
 
@@ -106,7 +111,7 @@ function Step3(props) {
             <span className='titreadd'> Online Service </span>
             <span className='txt'> Access to multiplayer games </span>
           </div>
-          <span className='prixadd'> +${online}/mo </span>
+          <span className='prixadd'> +${online}/{props.timeabo} </span>
         </div>
 
         <div className= "add larger" onClick={choixadd}>
@@ -115,7 +120,7 @@ function Step3(props) {
             <span className='titreadd'> Larger storage </span>
             <span className='txt'> Extra 1TB of cloud save </span>
           </div>
-          <span className='prixadd'> +${larger}/mo </span>
+          <span className='prixadd'> +${larger}/{props.timeabo}  </span>
         </div>
 
         <div className="add custom" onClick={choixadd}>
@@ -124,7 +129,7 @@ function Step3(props) {
             <span className='titreadd'> Customizable Profile </span>
             <span className='txt'> Custom theme on your profile </span>
           </div>
-          <span className='prixadd'> +${custom}/mo </span>
+          <span className='prixadd'> +${custom}/{props.timeabo}  </span>
         </div>
 
       </div>

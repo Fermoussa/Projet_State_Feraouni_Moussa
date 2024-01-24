@@ -3,6 +3,8 @@ import './Step4.css'
 
 function Step4(props) {
   console.log(props.periodefinale);
+
+  let a = (props.prixfinale + props.totaladd)
   return (
     <div className='page4'>
 
@@ -14,15 +16,17 @@ function Step4(props) {
       <div className="recap">
 
         <div className="plan">
+
           <div className="detailplan">
             <span> {props.planfinale}({props.periodefinale}) </span> 
             <span>${props.prixfinale}/{props.timeabo} </span>
-            <span> {props.totaladd} </span>
+            {/* <span> {props.totaladd} </span> */}
           </div>
 
           <div className="retour">
             <span onClick={()=> props.setLink(2)}> Change </span>
           </div>
+
 
           <div className="choixpub">
             {
@@ -35,12 +39,13 @@ function Step4(props) {
             }
           </div>
 
-
-
-
         </div>
 
       </div>
+
+      <div className="total">
+            <span> Total {a} </span>
+        </div>
 
     </div>
   )

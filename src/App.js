@@ -25,6 +25,8 @@ function App() {
 
 
 
+
+
   // let page = link == 1 ? <Step1/> : <Step2/>
   let page;
   if(link == 1){
@@ -32,7 +34,7 @@ function App() {
   }else if(link == 2){
     page = <Step2 link={link} setLink={setLink} total={total} setTotal={setTotal} planfinale={planfinale} setPlanfinale={setPlanfinale} periodefinale={periodefinale} setPeriodefinale={setPeriodefinale} prixfinale={prixfinale} setPrixfinale={setPrixfinale} timeabo={timeabo} setTimeabo={setTimeabo}  />;
   }else if(link == 3){
-    page = <Step3 link={link} setLink={setLink} total={total} setTotal={setTotal} add={add} setAdd={setAdd} tab={tab} setTab={setTab} totaladd={totaladd} setTotaladd={setTotaladd} />;
+    page = <Step3 timeabo={timeabo} setTimeabo={setTimeabo} link={link} setLink={setLink} total={total} setTotal={setTotal} add={add} setAdd={setAdd} tab={tab} setTab={setTab} totaladd={totaladd} setTotaladd={setTotaladd} />;
   }else{
     page = <Step4 link={link} setLink={setLink} total={total} setTotal={setTotal} planfinale={planfinale} periodefinale={periodefinale} setPeriodefinale={setPeriodefinale} prixfinale={prixfinale} setPrixfinale={setPrixfinale} timeabo={timeabo} setTimeabo={setTimeabo} tab={tab} setTab={setTab} totaladd={totaladd} setTotaladd={setTotaladd} />
   }
