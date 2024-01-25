@@ -33,7 +33,7 @@ function Step4(props) {
               props.tab.map((item,index)=>(
                 <div className='pub'>
                   <span className='add'> {item.pub} </span>
-                  <span> +${item.prix}/mo </span>
+                  <span className='prix'> +${item.prix}/{props.timeabo} </span>
                 </div>
               ))
             }
@@ -44,8 +44,14 @@ function Step4(props) {
       </div>
 
       <div className="total">
-            <span> Total {a} </span>
-        </div>
+            <span> Total(per {props.timeabo}) </span> 
+            <span className='prix'> ${a}/({props.timeabo}) </span>
+      </div>
+
+      <div className="pass3">
+        <button className='goback' onClick={()=> props.setLink(props.link - 1)}> Go Back </button>
+        <button onClick={()=> props.setLink(props.link + 1)}> Next Step  </button>
+      </div>
 
     </div>
   )

@@ -10,6 +10,10 @@ function Step3(props) {
 
   const[test, setTest] = useState(0);
 
+  // if(props.timeabo == "yr"){
+  //   setOnline(online * 10)
+  // }
+
 
   function choixadd(e){
     // console.log(e.currentTarget);
@@ -27,8 +31,17 @@ function Step3(props) {
     // }
 
     if(a.includes("add online")){
+      console.log(props.timeabo);
       // props.setTotal(props.total + online);
       e.currentTarget.classList.add("choisi");
+      // if(props.timeabo == "mo"){
+      //   setOnline(online)
+      // }
+
+      // else if(props.timeabo == "yr"){
+      //   setOnline(online * 10)
+      // }
+
       props.setAdd(online);
       setTest(1);
 
@@ -49,6 +62,13 @@ function Step3(props) {
     else if(a.includes("add larger")){
       // props.setTotal(props.total + larger);
       e.currentTarget.classList.add("choisi");
+      // if(props.timeabo == "mo"){
+      //   setLarger(larger)
+      // }
+
+      // else if(props.timeabo == "yr"){
+      //   setLarger(larger * 10)
+      // }
       props.setAdd(larger);
       setTest(2);
 
@@ -68,6 +88,13 @@ function Step3(props) {
     else if(a.includes("add custom")){
       // props.setTotal(props.total + custom);
       e.currentTarget.classList.add("choisi");
+      // if(props.timeabo == "mo"){
+      //   setCustom(custom)
+      // }
+
+      // else if(props.timeabo == "yr"){
+      //   setCustom(custom * 10)
+      // }
       props.setAdd(custom);
       setTest(3);
 
@@ -75,7 +102,7 @@ function Step3(props) {
       props.setTotaladd(props.totaladd + custom);
       
 
-      if (props.tab.some(item => item.pub === "Customizable Profile" && item.prix === custom)) {
+      if (props.tab.some(item => item.pub === "Customizable Profile" && item.prix === custom )) {
         alert("choix supprimé");
         props.setTab(props.tab.filter(objet => objet.pub !== "Customizable Profile")) 
         props.setTotaladd(props.totaladd - custom);
