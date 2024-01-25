@@ -5,6 +5,26 @@ function Step4(props) {
   console.log(props.periodefinale);
 
   let a = (props.prixfinale + props.totaladd)
+
+  props.setFin(props.prixfinale + props.totaladd);
+
+  function promo(e){
+    // props.setFin(props.prixfinale + props.totaladd);
+
+    if(e.key === 'Enter'){
+      // console.log(e.target.value);
+      if(e.target.value === "promo10"){
+        // alert("code promo valide et activé")
+        props.setFin(props.fin - (props.fin/100));
+        console.log(props.fin);
+      }
+      else{
+        alert("code promo non valide")
+        // props.setFin(props.prixfinale + props.totaladd);
+      }
+    }
+  }
+
   return (
     <div className='page4'>
 
@@ -45,8 +65,12 @@ function Step4(props) {
 
       <div className="total">
             <span> Total(per {props.timeabo}) </span> 
-            <span className='prix'> ${a}/({props.timeabo}) </span>
+            <span className='prix'> ${props.fin}/({props.timeabo}) </span>
       </div>
+{/* 
+      <div className="promo">
+        <input type="text" placeholder='code promo' name="" id="" onKeyDown={promo} />
+      </div> */}
 
       <div className="pass3">
         <button className='goback' onClick={()=> props.setLink(props.link - 1)}> Go Back </button>

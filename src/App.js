@@ -24,24 +24,15 @@ function App() {
   const[tab, setTab] = useState([]);
   const[totaladd, setTotaladd] = useState(0);
 
+  const[fin, setFin] = useState(0);
+
   var btn1 = document.getElementById("btn1");
   var btn2 = document.getElementById("btn2");
   var btn3 = document.getElementById("btn3");
   var btn4 = document.getElementById("btn4");
-  // var btn3;
-  // var btn3;
 
-
-
-  // btn1.style.background = "rebeccapurple";
-
-  // let page = link == 1 ? <Step1/> : <Step2/>
   let page;
   if(link === 1){
-    // btn1 = document.getElementById("btn1"); 
-    console.log(btn1);
-    // btn1.style.background = "rebeccapurple";
-    // btn2.style.background = "transparent";
     page = <Step1 link={link} setLink={setLink} nom={nom} setNom={setNom} mail={mail} setMail={setMail} phone={phone} setPhone={setPhone}  />;
   }else if(link === 2){
     // btn2 = document.getElementById("btn2"); 
@@ -74,11 +65,14 @@ function App() {
     btn4.style.color = "darkblue";
 
 
-    page = <Step4 link={link} setLink={setLink} total={total} setTotal={setTotal} planfinale={planfinale} periodefinale={periodefinale} setPeriodefinale={setPeriodefinale} prixfinale={prixfinale} setPrixfinale={setPrixfinale} timeabo={timeabo} setTimeabo={setTimeabo} tab={tab} setTab={setTab} totaladd={totaladd} setTotaladd={setTotaladd} />
+    page = <Step4  fin={fin} setFin={setFin} link={link} setLink={setLink} total={total} setTotal={setTotal} planfinale={planfinale} periodefinale={periodefinale} setPeriodefinale={setPeriodefinale} prixfinale={prixfinale} setPrixfinale={setPrixfinale} timeabo={timeabo} setTimeabo={setTimeabo} tab={tab} setTab={setTab} totaladd={totaladd} setTotaladd={setTotaladd} />
   }else{
     page = <Thank/>
   }
 
+
+
+  
   return (
     <div className="App">
       <div className="content">
